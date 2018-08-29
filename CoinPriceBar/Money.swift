@@ -19,15 +19,14 @@ enum Coin: String {
 }
 
 enum FiatMoney: String {
-  case USD
+  case USDT
 }
 
 extension Coin {
 
   func priceProvider() -> CoinPriceProvider {
     switch self {
-    case .XRP, .IOTA, .ADA: return BinancePriceProvider()
-    default: return CoinbasePriceProvider()
+    default: return BinancePriceProvider()
     }
   }
 }
